@@ -52,7 +52,7 @@ def attaque():
             compteur += 1
             s.close
         except socket.error:
-            print('\033[91m' + "[!] Connexion impossible!")
+            print('\033[91m' + "[!] Connexion impossible! L'IP spécifiée ne répond plus.")
             break
 
 for i in range(threads):
