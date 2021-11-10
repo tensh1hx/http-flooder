@@ -1,6 +1,6 @@
 # 🌐 Demo of http-flooder
 
-![140641241-8f37ff5a-9f1b-4f0d-8058-8828b6bda607](https://user-images.githubusercontent.com/92758195/141179878-66f84aaf-3ddd-422d-8f79-4149e1ab1af5.png)
+![image](https://user-images.githubusercontent.com/92758195/141180767-0c6882dc-dc79-442c-8736-cb08e1959e14.png)
 
 ## What is an HTTP Flood Attack ?
 
