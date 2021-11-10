@@ -29,7 +29,6 @@ target = input('\033[92m' + "[?] Entrez l'IP à target: ")
 port = input('\033[92m' + "[?] Entrez un port: ")
 threads = input('\033[92m' + "[?] Entrez le nombre de threads à amorcer (342 par exemple): ")
 compteur = 1
-banned = 0
 
 if threads == '':
     threads = 342
