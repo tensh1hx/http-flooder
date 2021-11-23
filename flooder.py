@@ -14,13 +14,13 @@ elif platform == "win32":
     os.system('CLS')
 
 print("")
-print('\033[94m' + " _   _ _____ ___________  ______ _     _____  ___________ ___________ ")
-print('\033[94m' + "| | | |_   _|_   _| ___ \ |  ___| |   |  _  ||  _  |  _  \  ___| ___ \ ")
-print('\033[94m' + "| |_| | | |   | | | |_/ / | |_  | |   | | | || | | | | | | |__ | |_/ /")
-print('\033[94m' + "|  _  | | |   | | |  __/  |  _| | |   | | | || | | | | | |  __||    / ")
-print('\033[94m' + "| | | | | |   | | | |     | |   | |___\ \_/ /\ \_/ / |/ /| |___| |\ \ ")
-print('\033[94m' + "\_| |_/ \_/   \_/ \_|     \_|   \_____/\___/  \___/|___/ \____/\_| \_|")
-print('\033[94m' + "                                                                      ")
+print(f"{Fore.BLUE} _   _ _____ ___________  ______ _     _____  ___________ ___________ ")
+print(f"{Fore.BLUE}| | | |_   _|_   _| ___ \ |  ___| |   |  _  ||  _  |  _  \  ___| ___ \ ")
+print(f"{Fore.BLUE}| |_| | | |   | | | |_/ / | |_  | |   | | | || | | | | | | |__ | |_/ /")
+print(f"{Fore.BLUE}|  _  | | |   | | |  __/  |  _| | |   | | | || | | | | | |  __||    / ")
+print(f"{Fore.BLUE}| | | | | |   | | | |     | |   | |___\ \_/ /\ \_/ / |/ /| |___| |\ \ ")
+print(f"{Fore.BLUE}\_| |_/ \_/   \_/ \_|     \_|   \_____/\___/  \___/|___/ \____/\_| \_|")
+print(f"{Fore.BLUE}                                                                      ")
 print("")
 print('\033[95m' + "By @tensh1hx | https://github.com/tensh1hx | You can modify or redistribute the script.")
 print("")
@@ -46,11 +46,11 @@ def attaque():
 
             compteur += 1
 
-            print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {compteur} {Fore.LIGHTBLACK_EX}requêtes envoyées avec succès à '{target}' !".format(compteur, target))
+            print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {compteur} {Fore.LIGHTBLACK_EX}requêtes envoyées avec succès à {Fore.WHITE}'{target}' {Fore.LIGHTBLACK_EX}!".format(compteur, target))
 
             s.close
         except socket.error:
-            print(f"{Fore.WHITE}[ {Fore.RED}! {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Connexion impossible! '{target}' ne répond plus.")
+            print(f"{Fore.WHITE}[ {Fore.RED}! {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Connexion impossible! {Fore.WHITE}'{target}' {Fore.LIGHTBLACK_EX}ne répond plus.")
             socket.close
             break
 
